@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMART HOUSE</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #0f172a;
+        color: #e2e8f0;
+        scroll-behavior: smooth;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        background: #020617;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+      .logo {
+        font-weight: 600;
+        font-size: 1.3em;
+        color: #38bdf8;
+      }
+      nav a {
+        color: #e2e8f0;
+        margin-left: 20px;
+        text-decoration: none;
+      }
+      nav a:hover {
+        color: #38bdf8;
+      }
+
+      .section {
+        padding: 80px 40px;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(40px);
+        transition: 0.8s;
+      }
+      .section.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .card {
+        background: #1e293b;
+        padding: 30px;
+        border-radius: 20px;
+        max-width: 900px;
+        margin: auto;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+      .card h1,
+      .card h2,
+      .card h3 {
+        color: #38bdf8;
+        margin-bottom: 20px;
+      }
+      .card p {
+        color: #cbd5f5;
+        margin-bottom: 15px;
+        line-height: 1.6;
+        text-align: justify;
+      }
+
+      .resaltado {
+        color: #38bdf8;
+        font-weight: 600;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        text-align: left;
+      }
+      li::before {
+        content: "• ";
+        color: #38bdf8;
+      }
+
+      /* Carrusel */
+      .carrusel {
+        position: relative;
+        max-width: 700px;
+        margin: 40px auto;
+      }
+      .carrusel img {
+        width: 100%;
+        display: none;
+        border-radius: 15px;
+      }
+      .carrusel img.active {
+        display: block;
+      }
+      .btn-carrusel {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #38bdf8;
+        border: none;
+        font-size: 2em;
+        padding: 5px 15px;
+        cursor: pointer;
+        border-radius: 50%;
+      }
+      .izq {
+        left: -20px;
+      }
+      .der {
+        right: -20px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        margin-top: 40px;
+      }
+      .miembro {
+        background: #1e293b;
+        padding: 20px;
+        border-radius: 15px;
+        transition: 0.3s;
+      }
+      .miembro:hover {
+        transform: translateY(-8px);
+      }
+
+      .video {
+        max-width: 900px;
+        margin: auto;
+        border-radius: 15px;
+        overflow: hidden;
+      }
+      footer {
+        text-align: center;
+        padding: 40px;
+        background: #020617;
+        color: #64748b;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">SMART HOUSE</div>
+      <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#proyecto">Proyecto</a>
+        <a href="#equipo">Equipo</a>
+      </nav>
+    </header>
+
+    <section class="section" id="inicio">
+      <div class="card">
+        <h1>
+          ¡Hola! Somos los chicos de
+          <span class="resaltado">7mo 1ra Tecip</span>
+        </h1>
+        <p>
+          Un grupo de estudiantes comprometidos con la tecnología, la innovación
+          y los desafíos reales del mundo digital. Desde la Escuela Técnica N°4
+          de Moreno, desarrollamos proyectos con pasión, creatividad y trabajo
+          en equipo.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="proyecto">
+      <div class="card">
+        <h2>Proyecto: Smart House – Control Domótico por Voz</h2>
+        <p>
+          Nuestro proyecto de <strong>Smart House</strong> consiste en el
+          desarrollo de una casa domótica controlada mediante
+          <strong>un celular</strong>, pensada para facilitar la vida cotidiana
+          mediante tecnologías accesibles y para las personas con una
+          discapacidad que no permita el funcionamiento total del ser humano.
+        </p>
+
+        <p>
+          Diseñamos una <strong>aplicación móvil</strong> con MIT App Inventor
+          que se comunica por <strong>Bluetooth</strong> con
+          <strong>Arduino UNO</strong>.
+        </p>
+
+        <ul>
+          <li>
+            <strong>Encender Luces</strong> ➝ envia la instuccion A<strong>
+              ➝ Arduino enciende las Luces</strong
+            >
+          </li>
+          <li>
+            <strong>Apagar Luces</strong>
+            ➝ envia la instuccion B<strong> ➝ Arduino apaga las Luces</strong>
+          </li>
+        </ul>
+
+        <p>
+          Este sistema ofrece una solución funcional, inalámbrica y escalable.
+        </p>
+
+        <h3>Imágenes del proyecto</h3>
+        <div class="carrusel">
+          <button class="btn-carrusel izq">❮</button>
+          <img src="modelo smart house.png" class="active" />
+          <img src="aplicaion.png" />
+          <img src="arduino ejemplo.png" />
+          <button class="btn-carrusel der">❯</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Nuestro Objetivo</h2>
+        <p>
+          En un mundo donde la tecnología avanza constantemente, creemos que su
+          verdadero valor está en mejorar la vida de las personas.
+        </p>
+        <p>
+          Por eso desarrollamos una solución accesible pensada para personas con
+          movilidad reducida, adultos mayores o cualquier usuario.
+        </p>
+        <p>
+          <strong>Cuando la tecnologia es inclusiva, no tiene limites.</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="video">
+        <iframe
+          width="100%"
+          height="450"
+          src="https://www.youtube.com/embed/Pf5BCa1gs2w"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Palabras Finales</h2>
+        <p>
+          Este proyecto no es solo un trabajo técnico: es una muestra de lo que
+          podemos lograr cuando trabajamos con compromiso, creatividad y un
+          objetivo claro.
+        </p>
+        <p><em>– Equipo de 7mo 1ra Tecip</em></p>
+      </div>
+    </section>
+
+    <section class="section" id="equipo">
+      <h2>Equipo</h2>
+      <div class="grid">
+        <div class="miembro">Rafael Bosso<br /><small>Docente guía</small></div>
+        <div class="miembro">Luca Perez<br /><small>Alumno</small></div>
+        <div class="miembro">Baez Juan Cruz<br /><small>Alumno</small></div>
+        <div class="miembro">Juan Cruz Warle<br /><small>Alumno</small></div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 Smart House - 7mo 1ra Tecip</p>
+    </footer>
+
+    <script>
+      // animaciones
+      const sections = document.querySelectorAll(".section");
+      window.addEventListener("scroll", () => {
+        sections.forEach((sec) => {
+          if (sec.getBoundingClientRect().top < window.innerHeight - 100) {
+            sec.classList.add("visible");
+          }
+        });
+      });
+
+      // carrusel
+      const imgs = document.querySelectorAll(".carrusel img");
+      let i = 0;
+      function show() {
+        imgs.forEach((img) => img.classList.remove("active"));
+        imgs[i].classList.add("active");
+      }
+
+      document.querySelector(".der").onclick = () => {
+        i = (i + 1) % imgs.length;
+        show();
+      };
+      document.querySelector(".izq").onclick = () => {
+        i = (i - 1 + imgs.length) % imgs.length;
+        show();
+      };
+      setInterval(() => {
+        i = (i + 1) % imgs.length;
+        show();
+      }, 4000);
+    </script>
+  </body>
+</html>
